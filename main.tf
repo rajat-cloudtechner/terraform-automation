@@ -1,3 +1,4 @@
+
 resource "aws_vpc" "Main" {                
    cidr_block       = "${var.main_vpc_cidr}"    
    instance_tenancy = "default"
@@ -96,7 +97,20 @@ resource "aws_vpc" "Main" {
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
   }
- }
+
+  egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
+  tags = {
+    Name = "taskmain"
+  }
+}
+ 
 
 
  resource "aws_instance" "my_instance" {
