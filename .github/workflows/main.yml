@@ -20,12 +20,13 @@ jobs:
         aws-access-key-id:  ${{ secrets.ACCESS_KEY_ID }} 
         aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }} 
         aws-region: us-east-1
-    - name: destroy
-      run: terraform destroy
+    
         
     - name: initializing terraform
       run: terraform init
-      
+    - name: destroy
+      run: terraform destroy
+    
     - name: infrastructure
       run: terraform apply -auto-approve
         
