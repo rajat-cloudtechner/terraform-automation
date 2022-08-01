@@ -10,7 +10,3 @@ variable "public_subnet_region" {
   }
 variable "private_subnet_region" {
   }
-variable "aws_access_key" {
-  }
-variable "aws_secret_key" {
-  }
