@@ -21,6 +21,10 @@ jobs:
         aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }} 
         aws-region: us-east-1
         
+        
+    - name: initializing terraform
+      run: terraform init
+      
     - name: infrastructure
       run: terraform apply
         
