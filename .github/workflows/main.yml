@@ -27,4 +27,3 @@ jobs:
     
     - name: infrastructure
       run: terraform apply -auto-approve
-
